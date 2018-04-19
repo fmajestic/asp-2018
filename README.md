@@ -1,1 +1,1 @@
-# Personal projects and lab solutions for ASP 2018. 
+# Personal projects, exam excercises, and lab solutions for ASP 2018. 
