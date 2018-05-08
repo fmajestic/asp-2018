@@ -48,7 +48,7 @@ int upis(cvor ** glava, int element) {
 
 int main (int argc, char ** argv) {
     int n, i, input;
-    cvor *glava = NULL;
+    cvor *tofree, *glava = NULL;
 
     printf("Unesite broj elemenata (max 10): ");
     scanf("%d", &n);
@@ -64,9 +64,9 @@ int main (int argc, char ** argv) {
     printLinked(glava);
 
     while(glava) {
-        glava = glava;
+        tofree = glava;
         glava = glava->next;
-        free(glava);
+        free(tofree);
     }
 
     return 0;

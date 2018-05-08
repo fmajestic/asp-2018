@@ -8,13 +8,13 @@ int cmpstr(char * a, char * b, char dir) {
 
 void insertionSort(char ** A, int N, int smjer) {
     int i, j;
-    char move[41];
+    char *move;
 
     for (i = 1; i < N; i++) {
-        for (strcpy(move, A[i]), j = i; j >= 1 && cmpstr(A[j - 1], move, smjer); j--)
-            strcpy(A[j], A[j - 1]);
+        for (move = A[i], j = i; j >= 1 && cmpstr(A[j - 1], move, smjer); j--)
+            A[j] = A[j - 1];
         
-        strcpy(A[j], move);
+        A[j] = move;
     }
 }
 
