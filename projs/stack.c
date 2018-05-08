@@ -26,3 +26,42 @@ void revcopy(Stack * src, Stack * dest) {
     while (pop(src, &elem))
         push(dest, elem);
 }
+
+typedef struct nd {
+    int elem;
+    struct nd * next;
+} node;
+
+typedef struct st {
+    node *top;
+} Stack;
+
+void init(Stack * stack) {
+    stack->top = NULL;
+}
+
+int push(Stack * stack, int elem) {
+    node *newnode= malloc(sizeof(*new));
+    
+    if (!stack || !newnode) return 0;
+
+    node->elem = elem;
+    node->next = stack->top;
+    stack->top = node;
+
+    return 1;
+}
+
+int pop(Stack * stack, int * elem) {
+    stack *toremove;
+    
+    if (!stack || !stack->top || !elem) return 0;
+
+    toremove = stack->top;
+    *elem = stack->top->elem;
+
+    stack->top = stack->top->next;
+    free(toremove);
+
+    return 1;    
+}
