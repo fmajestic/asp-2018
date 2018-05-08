@@ -78,13 +78,12 @@ void sll_distinct(sllnode * head) {
     while (head);
 }
 
-void sll_destroy(sllnode * head) {
-    sllnode *next_tofree;
-
-    while (head) {
-        next_tofree = head->next;
-        free(head);
-        head = next_tofree;
+void sll_destroy(sllnode ** headp) {
+    sllnode *tofree;
+    while (*headp) {
+        tofree = *headp;
+        headp = &(tofree->next);
+        free(headp);        
     }
 }
 
