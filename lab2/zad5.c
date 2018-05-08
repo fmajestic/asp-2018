@@ -2,10 +2,7 @@
 
 void spojiNizove(char * A, char * B, char * Rez) {
     while (*A || *B)
-        if (*A >= *B)
-            *Rez++ = *A++;
-        else
-            *Rez++ = *B++;
+        *Rez++ = *A >= *B ? *A++ : *B++;
 
     *Rez = '\0';
 }
